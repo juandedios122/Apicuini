@@ -15,6 +15,11 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Atlas connected"))
   .catch((err) => console.error(err));
 
+// RUTA PRINCIPAL
+app.get("/", (req, res) => {
+  res.send("API CUINI funcionando correctamente 🚀");
+});
+
 app.use("/auth", authRoutes);
 app.use("/tree", treeRoutes);
 app.use("/settings", settingsRoutes);
